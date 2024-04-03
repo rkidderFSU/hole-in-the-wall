@@ -4,17 +4,30 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    // Put player movement here
+    private Rigidbody2D rb;
+    public float speed = 10f;
+    public float maxSpeed = 10f;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
-        
+
+        float moveHorizontal = Input.GetAxis("Horizontal");
+
+
+        Vector2 movement = new Vector2(moveHorizontal, 0f);
+
+
+        if (Mathf.Abs(rb.velocity.x) < maxSpeed)
+        {
+            rb.AddForce(movement * speed);
+        }
+
     }
 }
