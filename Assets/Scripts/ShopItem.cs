@@ -8,13 +8,16 @@ public class ShopItem : MonoBehaviour
     private Color idleColor = new Color(0.5f, 0.5f, 0.5f);
     public GameObject infoPopup;
     public bool inCart;
-    public List<ShopItem> items;
+    
+    public CartManager cartManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         sr.color = idleColor;
+        cartManager = FindObjectOfType<CartManager>();  
     }
 
     // Update is called once per frame
@@ -48,6 +51,7 @@ public class ShopItem : MonoBehaviour
     {
         if (inCart == false)
         {
+<<<<<<< Updated upstream
             inCart = true;
         }
         else if (inCart == true)
@@ -56,4 +60,23 @@ public class ShopItem : MonoBehaviour
             sr.color = idleColor;
         }
     }
+=======
+            inCart = true; 
+            cartManager.AddItemToCart(this);
+        }
+        else if (inCart == true)
+        {
+            ResetItem();
+        }
+        
+    }
+
+    public void ResetItem()
+    {
+        inCart = false;
+        sr.color = idleColor; 
+    }
+
+
+>>>>>>> Stashed changes
 }
