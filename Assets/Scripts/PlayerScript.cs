@@ -10,12 +10,14 @@ public class PlayerScript : MonoBehaviour
     private bool movingLeft;
     private bool movingRight;
     private SpriteRenderer sr;
+    private Animator animator;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -38,6 +40,8 @@ public class PlayerScript : MonoBehaviour
     private void Update()
     {
         CheckMovementDirection();
+
+        animator.SetBool("Walking", rb.velocity.magnitude > 0.5f);
     }
 
     private void CheckMovementDirection()

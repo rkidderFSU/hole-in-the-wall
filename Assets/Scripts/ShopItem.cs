@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShopItem : MonoBehaviour
 {
     private SpriteRenderer sr;
-    private Color idleColor = new Color(0.75f, 0.75f, 0.75f);
+    private Color idleColor = new Color(0.5f, 0.5f, 0.5f);
     public GameObject infoPopup;
     public bool inCart;
     public List<ShopItem> items;
@@ -20,7 +20,10 @@ public class ShopItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       /* if (inCart)
+        {
+            sr.color = Color.white;
+        } */
     }
 
     private void OnMouseEnter()
@@ -33,7 +36,7 @@ public class ShopItem : MonoBehaviour
     private void OnMouseExit()
     {
         // Hide info text and revert color
-        if(inCart == false)
+        if (inCart == false)
         { 
             sr.color = idleColor; 
         }
@@ -41,12 +44,16 @@ public class ShopItem : MonoBehaviour
         infoPopup.SetActive(false);
     }
 
-    private void OnMouseDown()
+    private void OnMouseDown() // Toggles between in and out of cart
     {
-        // Add the item to the "cart"
-        //gameObject.SetActive(false);
-        inCart = true; // This variable will come into play when we add customers
+        if (inCart == false)
+        {
+            inCart = true;
+        }
+        else if (inCart == true)
+        {
+            inCart = false;
+            sr.color = idleColor;
+        }
     }
-
-   
 }
