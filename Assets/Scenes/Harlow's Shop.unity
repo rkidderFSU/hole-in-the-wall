@@ -4191,6 +4191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chips
       objectReference: {fileID: 0}
+    - target: {fileID: 1671028634750985914, guid: 1e4a983a614123f449bee3a95bfb5351, type: 3}
+      propertyPath: inCart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4945732088265340177, guid: 1e4a983a614123f449bee3a95bfb5351, type: 3}
       propertyPath: m_LocalPosition.x
       value: 40
