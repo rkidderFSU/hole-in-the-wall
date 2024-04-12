@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 5263832344739039355}
   m_Layer: 0
   m_Name: Marble
-  m_TagString: Untagged
+  m_TagString: Shop Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPopup: {fileID: 7094812373755780361}
   inCart: 0
+  items: []
 --- !u!60 &5263832344739039355
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 977027650804034991}
   m_Layer: 0
   m_Name: Pencil Sharpener
-  m_TagString: Untagged
+  m_TagString: Shop Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,6 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPopup: {fileID: 3772366438510741413}
   inCart: 0
+  items: []
 --- !u!60 &977027650804034991
 PolygonCollider2D:
   m_ObjectHideFlags: 0

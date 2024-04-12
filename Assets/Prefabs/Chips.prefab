@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 7836228211927409157}
   m_Layer: 0
   m_Name: Chips
-  m_TagString: Untagged
+  m_TagString: Shop Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPopup: {fileID: 8398241613092820765}
   inCart: 0
+  items: []
 --- !u!60 &7836228211927409157
 PolygonCollider2D:
   m_ObjectHideFlags: 0

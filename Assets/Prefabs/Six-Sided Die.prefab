@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 676308242029797142}
   m_Layer: 0
   m_Name: Six-Sided Die
-  m_TagString: Untagged
+  m_TagString: Shop Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -288,6 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPopup: {fileID: 7404435076885745769}
   inCart: 0
+  items: []
 --- !u!60 &676308242029797142
 PolygonCollider2D:
   m_ObjectHideFlags: 0

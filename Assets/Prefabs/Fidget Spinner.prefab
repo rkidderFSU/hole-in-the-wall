@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 6755359170852861213}
   m_Layer: 0
   m_Name: Fidget Spinner
-  m_TagString: Untagged
+  m_TagString: Shop Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPopup: {fileID: 1478479003472656066}
   inCart: 0
+  items: []
 --- !u!60 &6755359170852861213
 PolygonCollider2D:
   m_ObjectHideFlags: 0

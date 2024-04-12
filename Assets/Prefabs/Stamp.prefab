@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 3513809492033466007}
   m_Layer: 0
   m_Name: Stamp
-  m_TagString: Untagged
+  m_TagString: Shop Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPopup: {fileID: 1331305093503671161}
   inCart: 0
+  items: []
 --- !u!60 &3513809492033466007
 PolygonCollider2D:
   m_ObjectHideFlags: 0

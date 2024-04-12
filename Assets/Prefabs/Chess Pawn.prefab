@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 5809833298708145071}
   m_Layer: 0
   m_Name: Chess Pawn
-  m_TagString: Untagged
+  m_TagString: Shop Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPopup: {fileID: 2850359544496260464}
   inCart: 0
+  items: []
 --- !u!60 &5809833298708145071
 PolygonCollider2D:
   m_ObjectHideFlags: 0
