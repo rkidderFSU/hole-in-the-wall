@@ -8,8 +8,9 @@ public class ShopItem : MonoBehaviour
     public Color idleColor = new Color(0.5f, 0.5f, 0.5f);
     public GameObject infoPopup;
     public bool inCart;
-    public List<ShopItem> items;
     private CartManager cart;
+    public string itemName;
+    public int id;
 
     // Start is called before the first frame update
     void Start()

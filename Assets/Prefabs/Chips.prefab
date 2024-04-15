@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cefac44c69391ae418283a75ea09d337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   infoPopup: {fileID: 8398241613092820765}
   inCart: 0
   items: []
