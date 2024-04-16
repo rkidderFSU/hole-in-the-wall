@@ -71,13 +71,13 @@ public class CartManager : MonoBehaviour
                 {
                     score += 10; // Increase score for correct item
                     correctItems += item.name + ", ";
-                    customerRequest.currentRequest.Remove(item); // Remove the item from request list
                 }
                 else
                 {
                     score -= 10; // Decrease score for incorrect item
                     incorrectItems += item.name + ", ";
                 }
+                customerRequest.availableItems.Remove(item); // Removes the item from the list of available items to sell
                 item.SetActive(false);
             }
             // Update correct and incorrect item lists as necessary
@@ -89,9 +89,10 @@ public class CartManager : MonoBehaviour
             {
                 ui.SetIncorrectText("Incorrect items sold: " + incorrectItems.TrimEnd(',', ' '));
             }
+            ui.SetFeedbackText("Items sold");
 
-            customerRequest.LogCurrentRequest(); // The request text will update if correct items are sold
             itemsInCart.Clear(); // Clear the cart after selling items
+            customerRequest.GenerateRequest(); // Generate a new request regardless of correct or incorrect items
         }
         else
         {

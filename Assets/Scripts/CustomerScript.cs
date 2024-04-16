@@ -14,6 +14,14 @@ public class CustomerScript : MonoBehaviour
         GenerateRequest();
     }
 
+    private void Update()
+    {
+        /* if (currentRequest.Count == 0)
+        {
+            GenerateRequest();
+        } */
+    }
+
     public void GenerateRequest()
     {
         currentRequest.Clear();
@@ -38,7 +46,7 @@ public class CustomerScript : MonoBehaviour
             requestDescription += item.name + ", ";
         }
         requestDescription = requestDescription.TrimEnd(',', ' ');
-        ui.UpdateRequestText(requestDescription);
+        StartCoroutine(ui.UpdateRequestText(requestDescription));
         
     }
 }

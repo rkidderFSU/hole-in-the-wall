@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float speed = 10f;
+    public float acceleration = 20f;
     public float maxSpeed = 10f;
     private bool movingLeft;
     private bool movingRight;
@@ -32,9 +32,8 @@ public class PlayerScript : MonoBehaviour
 
         if (Mathf.Abs(rb.velocity.x) < maxSpeed)
         {
-            rb.AddForce(movement * speed);
+            rb.AddForce(movement * acceleration);
         }
-
     }
 
     private void Update()
