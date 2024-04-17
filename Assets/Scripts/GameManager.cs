@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public bool gameEnded;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        gameEnded = false;
     }
 
     // Update is called once per frame

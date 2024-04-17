@@ -9,10 +9,12 @@ public class UIManager : MonoBehaviour
     private Coroutine feedbackCoroutine;
     private Coroutine correctCoroutine;
     private Coroutine incorrectCoroutine;
+    private Coroutine unsoldCoroutine;
     [SerializeField] private TextMeshProUGUI requestText;
     [SerializeField] private TextMeshProUGUI feedbackTextCorrect;
     [SerializeField] private TextMeshProUGUI feedbackTextIncorrect;
     [SerializeField] private TextMeshProUGUI feedbackTextGeneral;
+    [SerializeField] private TextMeshProUGUI feedbackTextUnsold;
     [SerializeField] private TextMeshProUGUI scoreText;
 
 
@@ -83,6 +85,21 @@ public class UIManager : MonoBehaviour
         feedbackTextGeneral.text = text;
         yield return new WaitForSeconds(2);
         feedbackTextGeneral.text = "";
+    }
+
+    public void SetUnsoldText(string text)
+    {
+        if (unsoldCoroutine != null)
+        {
+            StopCoroutine(unsoldCoroutine);
+        }
+        unsoldCoroutine = StartCoroutine(DisplayUnsold(text));
+    }
+    public IEnumerator DisplayUnsold(string text)
+    {
+        feedbackTextUnsold.text = text;
+        yield return new WaitForSeconds(5);
+        feedbackTextUnsold.text = "";
     }
 
     public void UpdateScoreText()

@@ -11,6 +11,8 @@ public class PlayerScript : MonoBehaviour
     private bool movingRight;
     private SpriteRenderer sr;
     private Animator animator;
+    private CameraController cam;
+    private GameManager m;
 
 
     void Start()
@@ -18,28 +20,32 @@ public class PlayerScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        cam = GameObject.Find("Main Camera").GetComponent<CameraController>();
+        m = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
 
     void FixedUpdate()
     {
-
-        float moveHorizontal = Input.GetAxis("Horizontal");
-
-
-        Vector2 movement = new Vector2(moveHorizontal, 0f);
-
-
-        if (Mathf.Abs(rb.velocity.x) < maxSpeed)
+        if (cam.followPlayer && !m.gameEnded)
         {
-            rb.AddForce(movement * acceleration);
+            // Handle movement
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            Vector2 movement = new Vector2(moveHorizontal, 0f);
+
+            if (Mathf.Abs(rb.velocity.x) < maxSpeed)
+            {
+                rb.AddForce(movement * acceleration);
+            }
         }
     }
 
     private void Update()
     {
-        CheckMovementDirection();
-
+        if (cam.followPlayer && !m.gameEnded)
+        {
+            CheckMovementDirection();
+        }
         animator.SetBool("Walking", rb.velocity.magnitude > 0.5f);
     }
 
@@ -62,6 +68,6 @@ public class PlayerScript : MonoBehaviour
         if ((Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) && !movingLeft)
         {
             movingRight = false;
-        } 
+        }
     }
 }
