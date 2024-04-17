@@ -150,7 +150,7 @@ public class CartManager : MonoBehaviour
         {
             cam.MoveToPlayer();
             m.gameEnded = true;
-            // Display the end screen
+            ui.DisplayEndScreen();
         }
     }
 }

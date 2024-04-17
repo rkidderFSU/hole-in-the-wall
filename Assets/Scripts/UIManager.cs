@@ -6,6 +6,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     private CartManager m;
+    private GameManager gm;
     private Coroutine feedbackCoroutine;
     private Coroutine correctCoroutine;
     private Coroutine incorrectCoroutine;
@@ -16,11 +17,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI feedbackTextGeneral;
     [SerializeField] private TextMeshProUGUI feedbackTextUnsold;
     [SerializeField] private TextMeshProUGUI scoreText;
+    public GameObject endScreen;
+    public TextMeshProUGUI finalScoreText;
 
 
     private void Start()
     {
         m = GameObject.Find("Game Manager").GetComponent<CartManager>();
+        gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     private void Update()
@@ -104,6 +108,19 @@ public class UIManager : MonoBehaviour
 
     public void UpdateScoreText()
     {
-        scoreText.text = "Score: " + m.score;
+        if (!gm.gameEnded)
+        {
+            scoreText.text = "Score: " + m.score;
+        }
+        else
+        {
+            scoreText.text = "";
+        }
+    }
+
+    public void DisplayEndScreen()
+    {
+        endScreen.SetActive(true);
+        finalScoreText.text = "Final Score: " + m.score;
     }
 }
