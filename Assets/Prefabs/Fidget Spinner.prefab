@@ -236,7 +236,6 @@ MonoBehaviour:
   idleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   infoPopup: {fileID: 1478479003472656066}
   inCart: 0
-  items: []
 --- !u!60 &6755359170852861213
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -564,7 +563,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[placeholder text]'
+  m_text: "Marley used this once during that craze. I should\u2019ve known he would
+    stop using it once the fad died."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

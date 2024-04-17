@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     public GameObject endScreen;
     public TextMeshProUGUI finalScoreText;
+    public Button clearButton;
+    public Button sellButton;
 
 
     private void Start()
@@ -121,6 +124,8 @@ public class UIManager : MonoBehaviour
     public void DisplayEndScreen()
     {
         endScreen.SetActive(true);
+        clearButton.gameObject.SetActive(false);
+        sellButton.gameObject.SetActive(false);
         finalScoreText.text = "Final Score: " + m.score;
     }
 }
