@@ -9,6 +9,7 @@ public class ShopItem : MonoBehaviour
     public GameObject infoPopup;
     public bool inCart;
     private CartManager cart;
+    private ButtonsSFX sfx;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class ShopItem : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         sr.color = idleColor;
         cart = GameObject.Find("Game Manager").GetComponent<CartManager>();
+        sfx = GameObject.Find("Music Player").GetComponent<ButtonsSFX>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class ShopItem : MonoBehaviour
         // Highlight the item and show info text
         sr.color = Color.white;
         infoPopup.SetActive(true);
+        sfx.PlayMouseOverSound();
     }
 
     private void OnMouseExit()

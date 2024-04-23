@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6524098732523303179}
   - component: {fileID: 1238674711273390992}
+  - component: {fileID: 4501949967381550323}
   m_Layer: 0
   m_Name: Music Player
   m_TagString: Untagged
@@ -42,7 +43,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0678c10c265037b44a1cbc1c6fabea61, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 48ea0f10f7c2d684bb8bfcc7966a2ee2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -128,3 +129,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4501949967381550323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6339990009123778576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6210e6e767e9c0e41a965039b6ba0201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSelectSound: {fileID: 8300000, guid: 27c087bdaa0b7ec4a9e1d71e8cc85649, type: 3}
+  itemDeselectSound: {fileID: 8300000, guid: 848e50651c0fdd742bb9e84d4ff4c02f, type: 3}
+  buttonMouseOverSound: {fileID: 8300000, guid: 4da1df6db984c054298301cb86d24535, type: 3}
+  scoreIncreaseSound: {fileID: 8300000, guid: efe5e28f41133d847b0b4aa6fbaa5324, type: 3}
+  scoreDecreaseSound: {fileID: 8300000, guid: 0b0bc43d1b2e4b6499f10536b6a5e74a, type: 3}

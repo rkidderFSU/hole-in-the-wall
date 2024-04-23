@@ -11,12 +11,14 @@ public class CartManager : MonoBehaviour
     private UIManager ui;
     private CameraController cam;
     private GameManager m;
+    private ButtonsSFX sfx;
 
     private void Start()
     {
         ui = GameObject.Find("Game Manager").GetComponent<UIManager>();
         cam = GameObject.Find("Main Camera").GetComponent<CameraController>();
         m = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        sfx = GameObject.Find("Music Player").GetComponent<ButtonsSFX>();
     }
 
     public void ToggleItem(GameObject item)
@@ -31,6 +33,7 @@ public class CartManager : MonoBehaviour
             itemScript.inCart = false;
             sr.color = itemScript.idleColor;
             ui.SetFeedbackText("Item Removed: " + item.name);
+            sfx.PlayDeselectSound();
         }
         else
         {
@@ -38,6 +41,7 @@ public class CartManager : MonoBehaviour
             itemScript.inCart = true;
             sr.color = Color.white;
             ui.SetFeedbackText("Item Added: " + item.name);
+            sfx.PlaySelectSound();
         }
     }
 
@@ -55,6 +59,7 @@ public class CartManager : MonoBehaviour
             }
             itemsInCart.Clear(); // Clear the list after resetting items
             ui.SetFeedbackText("All items removed from cart");
+            sfx.PlayDeselectSound();
         }
         else
         {
@@ -83,6 +88,8 @@ public class CartManager : MonoBehaviour
         string incorrectItems = ""; // String to hold names of incorrect items
         string unsoldItems = ""; //String to hold names of unsold items
 
+        int previousScore = score;
+
         foreach (GameObject item in itemsInCart)
         {
             // Check if the item is requested by the customer
@@ -107,9 +114,6 @@ public class CartManager : MonoBehaviour
             {
                 unsoldItems += item.name + ", ";
                 score -= 5; // Decrease score for each requested item not sold
-            }
-            else
-            {
                 customer.availableItems.Add(item); // Add sold items back to available items
             }
         }
@@ -134,6 +138,16 @@ public class CartManager : MonoBehaviour
         {
             customer.currentRequest.Remove(soldItem);
             customer.availableItems.Remove(soldItem);
+        }
+
+        // Play a sound depending on change in score
+        if (score > previousScore)
+        {
+            sfx.PlayIncreaseSound();
+        }
+        else if (score < previousScore)
+        {
+            sfx.PlayDecreaseSound();
         }
 
         itemsInCart.Clear(); // Clear the cart after selling items

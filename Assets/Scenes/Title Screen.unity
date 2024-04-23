@@ -257,6 +257,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153214121}
   m_CullTransparentMesh: 1
+--- !u!114 &308995822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4501949967381550323, guid: 2b71a7d3731f3994d97e610af9eaead9, type: 3}
+  m_PrefabInstance: {fileID: 5990781462703621325}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6210e6e767e9c0e41a965039b6ba0201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +687,7 @@ GameObject:
   - component: {fileID: 1377510802}
   - component: {fileID: 1377510801}
   - component: {fileID: 1377510800}
+  - component: {fileID: 1377510803}
   m_Layer: 5
   m_Name: Quit Button
   m_TagString: Untagged
@@ -797,6 +809,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377510798}
   m_CullTransparentMesh: 1
+--- !u!114 &1377510803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377510798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 308995822}
+          m_TargetAssemblyTypeName: ButtonsSFX, Assembly-CSharp
+          m_MethodName: PlayMouseOverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1460816534
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,6 +884,7 @@ GameObject:
   - component: {fileID: 1717236427}
   - component: {fileID: 1717236426}
   - component: {fileID: 1717236425}
+  - component: {fileID: 1717236429}
   m_Layer: 5
   m_Name: Start Button
   m_TagString: Untagged
@@ -964,6 +1006,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717236423}
   m_CullTransparentMesh: 1
+--- !u!114 &1717236429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717236423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 308995822}
+          m_TargetAssemblyTypeName: ButtonsSFX, Assembly-CSharp
+          m_MethodName: PlayMouseOverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1834840437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,6 +1184,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1238674711273390992, guid: 2b71a7d3731f3994d97e610af9eaead9, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238674711273390992, guid: 2b71a7d3731f3994d97e610af9eaead9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0678c10c265037b44a1cbc1c6fabea61, type: 3}
     - target: {fileID: 6339990009123778576, guid: 2b71a7d3731f3994d97e610af9eaead9, type: 3}
       propertyPath: m_Name
       value: Music Player
