@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float acceleration = 20f;
+    public float speed = 10f;
     public float maxSpeed = 10f;
     private bool movingLeft;
     private bool movingRight;
@@ -29,14 +29,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (cam.followPlayer && !m.gameEnded)
         {
-            // Handle movement
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            Vector2 movement = new Vector2(moveHorizontal, 0f);
-
-            if (Mathf.Abs(rb.velocity.x) < maxSpeed)
-            {
-                rb.AddForce(movement * acceleration);
-            }
+            HandlePlayerMovement();
         }
     }
 
@@ -44,12 +37,13 @@ public class PlayerScript : MonoBehaviour
     {
         if (cam.followPlayer && !m.gameEnded)
         {
-            CheckMovementDirection();
+            CheckMovementDirectionKeysPressed();
         }
+        CheckMovementDirectionKeysReleased(); // Always checks for release of keys to prevent a bug with the sprite renderer
         animator.SetBool("Walking", rb.velocity.magnitude > 0.5f);
     }
 
-    private void CheckMovementDirection()
+    private void CheckMovementDirectionKeysPressed()
     {
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && !movingRight)
         {
@@ -61,6 +55,10 @@ public class PlayerScript : MonoBehaviour
             movingRight = true;
             sr.flipX = false;
         }
+    }
+
+    private void CheckMovementDirectionKeysReleased()
+    {
         if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow)) && !movingRight)
         {
             movingLeft = false;
@@ -68,6 +66,17 @@ public class PlayerScript : MonoBehaviour
         if ((Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) && !movingLeft)
         {
             movingRight = false;
+        }
+    }
+
+    private void HandlePlayerMovement()
+    {
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        Vector2 movement = new Vector2(moveHorizontal, 0f);
+
+        if (Mathf.Abs(rb.velocity.x) < maxSpeed)
+        {
+            rb.AddForce(movement * speed);
         }
     }
 }
